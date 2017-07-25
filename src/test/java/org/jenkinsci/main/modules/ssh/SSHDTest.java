@@ -16,7 +16,8 @@ public class SSHDTest extends HudsonTestCase {
      * Makes sure 3 mode of the value round-trips correctly
      */
     public void testConfig() throws Exception {
-        jenkins.getInjector().injectMembers(this);
+        jenkins.model.Jenkins foo = null;
+        foo.getInjector().injectMembers(this);
 
         for (int i : new int[]{-1,0,100}) {
             sshd.setPort(i);
